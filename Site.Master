@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="MindWell.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindWell - Your Mental Health Companion</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #2c3e50; /* Dark teal background */
+            color: #ecf0f1; /* Light grey text for better visibility */
+        }
+        .navbar {
+            background-color: #1abc9c; /* Bright teal for navbar */
+        }
+        .navbar-brand, .nav-link {
+            color: #ecf0f1 !important; /* Light grey text for navbar items */
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #f39c12 !important; /* Orange highlight on hover */
+        }
+        footer {
+            padding: 20px 0;
+            background-color: #34495e; /* Darker teal for the footer */
+            color: #ecf0f1; /* Light grey text for footer */
+        }
+        h1, h2 {
+            color: #ecf0f1; /* Light grey for headings */
+        }
+        .container {
+            background-color: #34495e; /* Dark teal for main content area */
+            border-radius: 10px; /* Rounded corners */
+            padding: 30px; /* Add some padding */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            color: #ffffff; /* Change content text color to white */
+        }
+        .btn-primary {
+            background-color: #1abc9c; /* Primary button color */
+            border-color: #1abc9c; /* Border color */
+        }
+        .btn-primary:hover {
+            background-color: #16a085; /* Darker shade on hover */
+        }
+
+        .container .card {
+             color: #34495e; /* Set the text color to a darker shade for better contrast against the white background */
+        }
+
+        .container .hero-text {
+
+              color: #ff006e; /* Dark teal color for better contrast on the grey background */
+        }
+
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="Default.aspx">MindWell</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="Default.aspx">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="About.aspx">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="SelfAssessment.aspx">Self-Assessment</a></li>
+                        <li class="nav-item"><a class="nav-link" href="FindTherapist.aspx">Find a Therapist</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Resources.aspx">Resources</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Testimonials.aspx">Testimonials</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Contact.aspx">Contact</a></li>
+                    </ul>
+                    <asp:Label ID="UserWelcomeLabel" runat="server" CssClass="navbar-text mr-2" Visible="false"></asp:Label>
+                    <asp:LinkButton ID="LoginLink" runat="server" CssClass="btn btn-link" OnClick="LoginLink_Click">Login</asp:LinkButton>
+                    <asp:LinkButton ID="LogoutLink" runat="server" CssClass="btn btn-link" OnClick="LogoutLink_Click" Visible="false">Logout</asp:LinkButton>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container mt-5">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+        <footer class="mt-5">
+            <p>&copy; 2024 MindWell | Your Mental Health Companion</p>
+            <p><a href="PrivacyPolicy.aspx" style="color: #ecf0f1;">Privacy Policy</a> | <a href="Contact.aspx" style="color: #ecf0f1;">Contact</a></p>
+        </footer>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
